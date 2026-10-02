@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lilly fyller 1 år</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffaf2;
+      --card: #ffffff;
+      --ink: #3d3330;
+      --muted: #8c7d76;
+      --accent: #e8849a;
+      --accent-dark: #c45f78;
+      --soft: #fde6ea;
+      --line: #f0e0d8;
+      --grass: #a8cf94;
+      --grass-dark: #86b872;
+      --carrot: #f29a4a;
+      --fur: #ffffff;
+      --fur-line: #d9ccc6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Nunito", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+    h1, h2, .fredoka { font-family: "Fredoka", "Nunito", sans-serif; font-weight: 600; }
+
+    /* Toppen: kanin på en eng */
+    header {
+      text-align: center; padding: 48px 16px 0;
+      background: linear-gradient(#fdeef1, var(--bg));
+      overflow: hidden;
+    }
+    .hero-bunny { position: relative; display: inline-block; width: 150px; }
+    .hero-bunny svg { width: 150px; height: auto; display: block; animation: hop 3.2s ease-in-out infinite; }
+    .hero-bunny .badge {
+      position: absolute; right: -14px; top: 58px;
+      width: 52px; height: 52px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--accent); color: #fff;
+      font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 30px;
+      box-shadow: 0 3px 0 var(--accent-dark);
+      transform: rotate(8deg);
+    }
+    @keyframes hop {
+      0%, 70%, 100% { transform: translateY(0); }
+      80% { transform: translateY(-14px); }
+      90% { transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) { .hero-bunny svg { animation: none; } }
+    h1 { font-size: clamp(36px, 8vw, 60px); line-height: 1.1; margin: 16px 0 8px; }
+    .sub { color: var(--muted); font-size: 18px; margin: 0 0 28px; }
+    .meadow { display: block; width: 100%; height: 48px; margin-top: -1px; }
+
+    /* Bildegalleri */
+    .gallery { columns: 3 240px; column-gap: 12px; margin-top: 32px; }
+    .photo {
+      break-inside: avoid; margin: 0 0 12px;
+      border-radius: 18px; overflow: hidden; background: var(--soft);
+    }
+    .photo img { display: block; width: 100%; height: auto; }
+    .placeholder {
+      display: grid; place-content: center; justify-items: center; gap: 6px;
+      color: var(--accent-dark); font-weight: 700; font-size: 14px;
+      background: var(--soft);
+    }
+    .placeholder svg { width: 44px; height: auto; opacity: .55; }
+
+    /* Skjema med kanin som titter over kanten */
+    .rsvp {
+      position: relative;
+      max-width: 440px; margin: 120px auto 56px;
+      background: var(--card); border: 2px solid var(--line);
+      border-radius: 24px; padding: 32px 24px 28px;
+    }
+    .peek {
+      position: absolute; left: 50%; top: -86px; width: 96px;
+      transform: translateX(-50%); z-index: -1;
+    }
+    .rsvp h2 { font-size: 30px; margin: 0 0 20px; text-align: center; }
+    label.field { display: block; font-weight: 700; margin-bottom: 6px; }
+    input[type="text"] {
+      width: 100%; padding: 12px 14px; font: inherit;
+      border: 2px solid var(--line); border-radius: 14px; background: var(--bg);
+    }
+    input[type="text"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 22px; border: 0; padding: 0; }
+    .choices legend { font-weight: 700; margin-bottom: 6px; padding: 0; }
+    .choices label { display: flex; }
+    .choices input { position: absolute; opacity: 0; }
+    .choices span {
+      flex: 1; display: grid; place-items: center; text-align: center; padding: 12px; cursor: pointer;
+      border: 2px solid var(--line); border-radius: 14px; font-weight: 600;
+    }
+    .choices input:checked + span { background: var(--soft); border-color: var(--accent); color: var(--accent-dark); }
+    .choices input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .honey { position: absolute; left: -9999px; }
+    button {
+      width: 100%; padding: 14px; font: inherit; font-weight: 700; font-size: 17px;
+      color: #fff; background: var(--accent); border: 0; border-radius: 999px; cursor: pointer;
+      box-shadow: 0 3px 0 var(--accent-dark);
+    }
+    button:hover { background: var(--accent-dark); }
+    button:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--accent-dark); }
+    button:disabled { opacity: .6; cursor: default; }
+    .msg { text-align: center; margin: 14px 0 0; min-height: 1.5em; font-weight: 600; }
+    .msg.error { color: #b3261e; }
+    .thanks { text-align: center; font-size: 18px; }
+    .thanks strong { display: block; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 28px; margin-bottom: 4px; }
+
+    /* Bunnen: kaninspor */
+    footer { text-align: center; color: var(--muted); font-size: 14px; padding-bottom: 32px; }
+    .tracks { display: flex; justify-content: center; gap: 18px; margin-bottom: 12px; }
+    .tracks svg { width: 18px; height: 24px; fill: var(--fur-line); }
+    .tracks svg:nth-child(odd) { transform: translateY(8px) rotate(-8deg); }
+    .tracks svg:nth-child(even) { transform: rotate(8deg); }
+  </style>
+</head>
+<body>
+  <!-- Kanin og pote, brukt flere steder -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="bunny" viewBox="0 0 120 140">
+      <ellipse cx="42" cy="40" rx="13" ry="36" fill="var(--fur)" stroke="var(--fur-line)" stroke-width="3" transform="rotate(-10 42 40)"/>
+      <ellipse cx="42" cy="44" rx="6" ry="25" fill="#f8c3cf" transform="rotate(-10 42 44)"/>
+      <ellipse cx="78" cy="40" rx="13" ry="36" fill="var(--fur)" stroke="var(--fur-line)" stroke-width="3" transform="rotate(10 78 40)"/>
+      <ellipse cx="78" cy="44" rx="6" ry="25" fill="#f8c3cf" transform="rotate(10 78 44)"/>
+      <ellipse cx="60" cy="98" rx="44" ry="38" fill="var(--fur)" stroke="var(--fur-line)" stroke-width="3"/>
+      <circle cx="44" cy="92" r="5" fill="var(--ink)"/>
+      <circle cx="76" cy="92" r="5" fill="var(--ink)"/>
+      <circle cx="45.5" cy="90.5" r="1.6" fill="#fff"/>
+      <circle cx="77.5" cy="90.5" r="1.6" fill="#fff"/>
+      <circle cx="33" cy="105" r="7" fill="#f8c3cf" opacity=".7"/>
+      <circle cx="87" cy="105" r="7" fill="#f8c3cf" opacity=".7"/>
+      <path d="M55 101 h10 l-5 6 z" fill="var(--accent)"/>
+      <path d="M60 107 q-4 6 -9 3 M60 107 q4 6 9 3" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="paw" viewBox="0 0 18 24">
+      <ellipse cx="9" cy="16" rx="6" ry="8"/>
+      <circle cx="3" cy="5" r="2.6"/><circle cx="9" cy="2.6" r="2.6"/><circle cx="15" cy="5" r="2.6"/>
+    </symbol>
+  </svg>
+
+  <header>
+    <div class="hero-bunny">
+      <svg viewBox="0 0 120 140" role="img" aria-label="Kanin"><use href="#bunny"/></svg>
+      <div class="badge" aria-hidden="true">1</div>
+    </div>
+    <h1>Lilly fyller 1 år!</h1>
+    <p class="sub">Et helt år med smil, søl og små hopp 🐰🥕</p>
+    <svg class="meadow" viewBox="0 0 1000 48" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 30 Q80 6 160 26 T320 24 T480 28 T640 20 T800 28 T1000 22 V48 H0 Z" fill="var(--grass)"/>
+      <path d="M0 40 Q120 22 240 38 T480 36 T720 40 T1000 34 V48 H0 Z" fill="var(--grass-dark)"/>
+    </svg>
+  </header>
+
+  <div class="wrap">
+    <main>
+      <section class="gallery" id="gallery" aria-label="Bilder av Lilly"></section>
+
+      <section class="rsvp" aria-labelledby="rsvp-title">
+        <svg class="peek" viewBox="0 0 120 140" aria-hidden="true"><use href="#bunny"/></svg>
+        <h2 id="rsvp-title">Kommer du?</h2>
+        <form id="rsvp-form">
+          <label class="field" for="name">Navn</label>
+          <input type="text" id="name" name="Navn" required autocomplete="name">
+
+          <fieldset class="choices">
+            <legend>Svar</legend>
+            <label><input type="radio" name="Svar" value="Kommer" required><span>🎉 Jeg kommer</span></label>
+            <label><input type="radio" name="Svar" value="Kommer ikke"><span>Kan dessverre ikke</span></label>
+          </fieldset>
+
+          <!-- Til e-posten: emne, tabell-oppsett og en usynlig felle for spam-roboter -->
+          <input type="hidden" name="_subject" value="Nytt svar – Lilly 1 år">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button type="submit">Send svar</button>
+          <p class="msg" id="msg" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="tracks" aria-hidden="true">
+        <svg><use href="#paw"/></svg><svg><use href="#paw"/></svg><svg><use href="#paw"/></svg>
+        <svg><use href="#paw"/></svg><svg><use href="#paw"/></svg>
+      </div>
+      Laget med kjærlighet til Lilly ♥
+    </footer>
+  </div>
+
+  <script>
+    // ── Bilder ─────────────────────────────────────────────
+    // Legg bildene i mappen «bilder/» med navnene 1.jpg, 2.jpg, 3.jpg …
+    // Endre ANTALL_BILDER hvis du har flere eller færre.
+    const ANTALL_BILDER = 12;
+
+    // ── Skjema ─────────────────────────────────────────────
+    // Svarene sendes via FormSubmit til denne e-postadressen.
+    const SKJEMA_ADRESSE = "https://formsubmit.co/ajax/henriettestafset@gmail.com";
+
+    // Variert høyde gjør at plassholderne ligner et ekte bildegalleri.
+    const hoyder = [4/3, 1, 3/4, 4/5, 1, 4/3];
+    const gallery = document.getElementById("gallery");
+    for (let i = 1; i <= ANTALL_BILDER; i++) {
+      const fig = document.createElement("figure");
+      fig.className = "photo";
+      const img = new Image();
+      img.src = `bilder/${i}.jpg`;
+      img.alt = `Lilly, bilde ${i}`;
+      img.loading = "lazy";
+      img.onerror = () => {
+        fig.classList.add("placeholder");
+        fig.style.aspectRatio = hoyder[i % hoyder.length];
+        fig.innerHTML = `<svg aria-hidden="true" viewBox="0 0 120 140"><use href="#bunny"/></svg><span>Bilde ${i}</span>`;
+      };
+      fig.appendChild(img);
+      gallery.appendChild(fig);
+    }
+
+    const form = document.getElementById("rsvp-form");
+    const msg = document.getElementById("msg");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      msg.className = "msg";
+      msg.textContent = "";
+
+      const btn = form.querySelector("button");
+      btn.disabled = true;
+      btn.textContent = "Sender …";
+      try {
+        const res = await fetch(SKJEMA_ADRESSE, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || String(data.success) !== "true") throw new Error(data.message);
+        const navn = form.Navn.value.trim();
+        const kommer = form.Svar.value === "Kommer";
+        form.parentElement.innerHTML = `
+          <svg class="peek" viewBox="0 0 120 140" aria-hidden="true"><use href="#bunny"/></svg>
+          <div class="thanks" role="status">
+            <strong>Takk, ${navn.replace(/[<>&"]/g, "")}!</strong>
+            ${kommer ? "Så gøy – vi gleder oss til å se deg! 🎂" : "Så synd, men takk for at du sa ifra."}
+          </div>`;
+      } catch {
+        msg.className = "msg error";
+        msg.textContent = "Noe gikk galt. Prøv igjen om litt.";
+        btn.disabled = false;
+        btn.textContent = "Send svar";
+      }
+    });
+  </script>
+</body>
+</html>
