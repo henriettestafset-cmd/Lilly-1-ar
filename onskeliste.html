@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lillys ønskeliste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Kanin og pote, brukt flere steder -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="bunny" viewBox="0 0 120 140">
+      <ellipse cx="42" cy="40" rx="13" ry="36" fill="var(--fur)" stroke="var(--fur-line)" stroke-width="3" transform="rotate(-10 42 40)"/>
+      <ellipse cx="42" cy="44" rx="6" ry="25" fill="#f8c3cf" transform="rotate(-10 42 44)"/>
+      <ellipse cx="78" cy="40" rx="13" ry="36" fill="var(--fur)" stroke="var(--fur-line)" stroke-width="3" transform="rotate(10 78 40)"/>
+      <ellipse cx="78" cy="44" rx="6" ry="25" fill="#f8c3cf" transform="rotate(10 78 44)"/>
+      <ellipse cx="60" cy="98" rx="44" ry="38" fill="var(--fur)" stroke="var(--fur-line)" stroke-width="3"/>
+      <circle cx="44" cy="92" r="5" fill="var(--ink)"/>
+      <circle cx="76" cy="92" r="5" fill="var(--ink)"/>
+      <circle cx="45.5" cy="90.5" r="1.6" fill="#fff"/>
+      <circle cx="77.5" cy="90.5" r="1.6" fill="#fff"/>
+      <circle cx="33" cy="105" r="7" fill="#f8c3cf" opacity=".7"/>
+      <circle cx="87" cy="105" r="7" fill="#f8c3cf" opacity=".7"/>
+      <path d="M55 101 h10 l-5 6 z" fill="var(--accent)"/>
+      <path d="M60 107 q-4 6 -9 3 M60 107 q4 6 9 3" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="paw" viewBox="0 0 18 24">
+      <ellipse cx="9" cy="16" rx="6" ry="8"/>
+      <circle cx="3" cy="5" r="2.6"/><circle cx="9" cy="2.6" r="2.6"/><circle cx="15" cy="5" r="2.6"/>
+    </symbol>
+  </svg>
+
+  <header>
+    <nav class="topnav" aria-label="Sider">
+      <a href="index.html">Invitasjon</a>
+      <a href="onskeliste.html" aria-current="page">Ønskeliste</a>
+    </nav>
+    <div class="hero-row" style="margin-top: 28px">
+      <div class="hero-photo">
+        <img src="bilder/lilly-hero.jpg" alt="Lilly smiler" width="160" height="160">
+        <div class="badge" aria-hidden="true">1</div>
+      </div>
+      <div class="hero-bunny" aria-hidden="true">
+        <svg viewBox="0 0 120 140"><use href="#bunny"/></svg>
+      </div>
+    </div>
+    <h1>Lillys ønskeliste</h1>
+    <p class="sub">Dette ønsker Lilly seg til 1-årsdagen 🎁</p>
+    <svg class="meadow" viewBox="0 0 1000 48" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 30 Q80 6 160 26 T320 24 T480 28 T640 20 T800 28 T1000 22 V48 H0 Z" fill="var(--grass)"/>
+      <path d="M0 40 Q120 22 240 38 T480 36 T720 40 T1000 34 V48 H0 Z" fill="var(--grass-dark)"/>
+    </svg>
+  </header>
+
+  <div class="wrap">
+    <main>
+      <ul class="wishlist">
+        <li><span class="ico" aria-hidden="true">🧶</span>Ull</li>
+        <li><span class="ico" aria-hidden="true">🚗</span>Bilstol for store jenter</li>
+        <li><span class="ico" aria-hidden="true">❄️</span>Parkdress</li>
+        <li><span class="ico" aria-hidden="true">🧥</span>Uteklær</li>
+        <li><span class="ico" aria-hidden="true">🍳</span>Leker til lekekjøkkenet</li>
+        <li><span class="ico" aria-hidden="true">🛒</span>Dukkevogn</li>
+        <li><span class="ico" aria-hidden="true">🧸</span>Dukke</li>
+      </ul>
+      <p class="page-end"><a class="btn ghost" href="index.html#rsvp">Svar på invitasjonen</a></p>
+    </main>
+
+    <footer>
+      <div class="tracks" aria-hidden="true">
+        <svg><use href="#paw"/></svg><svg><use href="#paw"/></svg><svg><use href="#paw"/></svg>
+        <svg><use href="#paw"/></svg><svg><use href="#paw"/></svg>
+      </div>
+      Laget med kjærlighet til Lilly ♥
+    </footer>
+  </div>
+</body>
+</html>

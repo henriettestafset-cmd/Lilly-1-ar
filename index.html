@@ -3,127 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lilly fyller 1 år</title>
+  <title>Lilly fyller 1 år – bursdagsselskap 25. oktober</title>
+  <meta name="description" content="Du er invitert til Lillys 1-årsdag søndag 25. oktober kl. 14.00 i Åregjerdet 1b. Pølser og pizza.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #fffaf2;
-      --card: #ffffff;
-      --ink: #3d3330;
-      --muted: #8c7d76;
-      --accent: #e8849a;
-      --accent-dark: #c45f78;
-      --soft: #fde6ea;
-      --line: #f0e0d8;
-      --grass: #a8cf94;
-      --grass-dark: #86b872;
-      --carrot: #f29a4a;
-      --fur: #ffffff;
-      --fur-line: #d9ccc6;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Nunito", system-ui, sans-serif;
-      line-height: 1.5;
-    }
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
-    h1, h2, .fredoka { font-family: "Fredoka", "Nunito", sans-serif; font-weight: 600; }
-
-    /* Toppen: kanin på en eng */
-    header {
-      text-align: center; padding: 48px 16px 0;
-      background: linear-gradient(#fdeef1, var(--bg));
-      overflow: hidden;
-    }
-    .hero-bunny { position: relative; display: inline-block; width: 150px; }
-    .hero-bunny svg { width: 150px; height: auto; display: block; animation: hop 3.2s ease-in-out infinite; }
-    .hero-bunny .badge {
-      position: absolute; right: -14px; top: 58px;
-      width: 52px; height: 52px; border-radius: 50%;
-      display: grid; place-items: center;
-      background: var(--accent); color: #fff;
-      font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 30px;
-      box-shadow: 0 3px 0 var(--accent-dark);
-      transform: rotate(8deg);
-    }
-    @keyframes hop {
-      0%, 70%, 100% { transform: translateY(0); }
-      80% { transform: translateY(-14px); }
-      90% { transform: translateY(0); }
-    }
-    @media (prefers-reduced-motion: reduce) { .hero-bunny svg { animation: none; } }
-    h1 { font-size: clamp(36px, 8vw, 60px); line-height: 1.1; margin: 16px 0 8px; }
-    .sub { color: var(--muted); font-size: 18px; margin: 0 0 28px; }
-    .meadow { display: block; width: 100%; height: 48px; margin-top: -1px; }
-
-    /* Bildegalleri */
-    .gallery { columns: 3 240px; column-gap: 12px; margin-top: 32px; }
-    .photo {
-      break-inside: avoid; margin: 0 0 12px;
-      border-radius: 18px; overflow: hidden; background: var(--soft);
-    }
-    .photo img { display: block; width: 100%; height: auto; }
-    .placeholder {
-      display: grid; place-content: center; justify-items: center; gap: 6px;
-      color: var(--accent-dark); font-weight: 700; font-size: 14px;
-      background: var(--soft);
-    }
-    .placeholder svg { width: 44px; height: auto; opacity: .55; }
-
-    /* Skjema med kanin som titter over kanten */
-    .rsvp {
-      position: relative;
-      max-width: 440px; margin: 120px auto 56px;
-      background: var(--card); border: 2px solid var(--line);
-      border-radius: 24px; padding: 32px 24px 28px;
-    }
-    .peek {
-      position: absolute; left: 50%; top: -86px; width: 96px;
-      transform: translateX(-50%); z-index: -1;
-    }
-    .rsvp h2 { font-size: 30px; margin: 0 0 20px; text-align: center; }
-    label.field { display: block; font-weight: 700; margin-bottom: 6px; }
-    input[type="text"] {
-      width: 100%; padding: 12px 14px; font: inherit;
-      border: 2px solid var(--line); border-radius: 14px; background: var(--bg);
-    }
-    input[type="text"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 22px; border: 0; padding: 0; }
-    .choices legend { font-weight: 700; margin-bottom: 6px; padding: 0; }
-    .choices label { display: flex; }
-    .choices input { position: absolute; opacity: 0; }
-    .choices span {
-      flex: 1; display: grid; place-items: center; text-align: center; padding: 12px; cursor: pointer;
-      border: 2px solid var(--line); border-radius: 14px; font-weight: 600;
-    }
-    .choices input:checked + span { background: var(--soft); border-color: var(--accent); color: var(--accent-dark); }
-    .choices input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 1px; }
-    .honey { position: absolute; left: -9999px; }
-    button {
-      width: 100%; padding: 14px; font: inherit; font-weight: 700; font-size: 17px;
-      color: #fff; background: var(--accent); border: 0; border-radius: 999px; cursor: pointer;
-      box-shadow: 0 3px 0 var(--accent-dark);
-    }
-    button:hover { background: var(--accent-dark); }
-    button:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--accent-dark); }
-    button:disabled { opacity: .6; cursor: default; }
-    .msg { text-align: center; margin: 14px 0 0; min-height: 1.5em; font-weight: 600; }
-    .msg.error { color: #b3261e; }
-    .thanks { text-align: center; font-size: 18px; }
-    .thanks strong { display: block; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 28px; margin-bottom: 4px; }
-
-    /* Bunnen: kaninspor */
-    footer { text-align: center; color: var(--muted); font-size: 14px; padding-bottom: 32px; }
-    .tracks { display: flex; justify-content: center; gap: 18px; margin-bottom: 12px; }
-    .tracks svg { width: 18px; height: 24px; fill: var(--fur-line); }
-    .tracks svg:nth-child(odd) { transform: translateY(8px) rotate(-8deg); }
-    .tracks svg:nth-child(even) { transform: rotate(8deg); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Kanin og pote, brukt flere steder -->
@@ -150,12 +35,22 @@
   </svg>
 
   <header>
-    <div class="hero-bunny">
-      <svg viewBox="0 0 120 140" role="img" aria-label="Kanin"><use href="#bunny"/></svg>
-      <div class="badge" aria-hidden="true">1</div>
+    <nav class="topnav" aria-label="Sider">
+      <a href="index.html" aria-current="page">Invitasjon</a>
+      <a href="onskeliste.html">Ønskeliste</a>
+    </nav>
+    <div class="hero-row" style="margin-top: 28px">
+      <div class="hero-photo">
+        <img src="bilder/lilly-hero.jpg" alt="Lilly smiler" width="160" height="160">
+        <div class="badge" aria-hidden="true">1</div>
+      </div>
+      <div class="hero-bunny" aria-hidden="true">
+        <svg viewBox="0 0 120 140"><use href="#bunny"/></svg>
+      </div>
     </div>
-    <h1>Lilly fyller 1 år!</h1>
-    <p class="sub">Et helt år med smil, søl og små hopp 🐰🥕</p>
+    <p class="eyebrow" style="margin-top: 16px">Bursdagsselskap med kaninthema 🐰</p>
+    <h1 style="margin-top: 4px">Lilly fyller 1 år!</h1>
+    <p class="sub">Du er invitert til selskap 🎂🥕</p>
     <svg class="meadow" viewBox="0 0 1000 48" preserveAspectRatio="none" aria-hidden="true">
       <path d="M0 30 Q80 6 160 26 T320 24 T480 28 T640 20 T800 28 T1000 22 V48 H0 Z" fill="var(--grass)"/>
       <path d="M0 40 Q120 22 240 38 T480 36 T720 40 T1000 34 V48 H0 Z" fill="var(--grass-dark)"/>
@@ -164,14 +59,31 @@
 
   <div class="wrap">
     <main>
+      <section class="party" aria-labelledby="party-title">
+        <h2 id="party-title">Bursdagsselskap</h2>
+        <p class="lead">Kom og feir Lilly sammen med oss!</p>
+        <ul class="facts">
+          <li><span class="ico" aria-hidden="true">📅</span><span><small>Dato</small><strong>Søndag 25. oktober</strong></span></li>
+          <li><span class="ico" aria-hidden="true">⏰</span><span><small>Klokken</small><strong>14.00</strong></span></li>
+          <li><span class="ico" aria-hidden="true">📍</span><span><small>Sted</small><strong>Åregjerdet 1b</strong></span></li>
+          <li><span class="ico" aria-hidden="true">🍕</span><span><small>Servering</small><strong>Pølser og pizza</strong></span></li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="#rsvp">Svar på invitasjonen</a>
+          <a class="btn ghost" href="onskeliste.html">Se ønskelisten 🎁</a>
+        </div>
+      </section>
+
+      <h2 class="section-title">Litt av Lilly</h2>
       <section class="gallery" id="gallery" aria-label="Bilder av Lilly"></section>
 
-      <section class="rsvp" aria-labelledby="rsvp-title">
+      <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
         <svg class="peek" viewBox="0 0 120 140" aria-hidden="true"><use href="#bunny"/></svg>
         <h2 id="rsvp-title">Kommer du?</h2>
+        <p class="lead">Si fra, så vet vi hvor mange vi blir.</p>
         <form id="rsvp-form">
           <label class="field" for="name">Navn</label>
-          <input type="text" id="name" name="Navn" required autocomplete="name">
+          <input type="text" id="name" name="Navn" required maxlength="80" autocomplete="name">
 
           <fieldset class="choices">
             <legend>Svar</legend>
@@ -201,9 +113,40 @@
 
   <script>
     // ── Bilder ─────────────────────────────────────────────
-    // Legg bildene i mappen «bilder/» med navnene 1.jpg, 2.jpg, 3.jpg …
-    // Endre ANTALL_BILDER hvis du har flere eller færre.
-    const ANTALL_BILDER = 12;
+    // Nye bilder: legg dem i «bilder/» og ta dem med her (fil + beskrivelse).
+    const BILDER = [
+      ["lilly-13.jpg", "Lilly som nyfødt med kosekaninen sin"],
+      ["lilly-14.jpg", "Lilly som nyfødt i bilstolen"],
+      ["lilly-15.jpg", "Lilly som nyfødt sammen med et annet barn"],
+      ["lilly-25.jpg", "Lilly sover, sett fra siden"],
+      ["lilly-16.jpg", "Lilly sover med smokk"],
+      ["lilly-17.jpg", "Lilly sover på brystet til en voksen"],
+      ["lilly-18.jpg", "Lilly sover under et grått strikket teppe"],
+      ["lilly-19.jpg", "Lilly sover i kurven"],
+      ["lilly-20.jpg", "Lilly i lilla klær i sofaen"],
+      ["lilly-22.jpg", "Lilly sammen med en voksen"],
+      ["lilly-21.jpg", "Lilly i blåbærdress i liggekurven"],
+      ["lilly-23.jpg", "Lilly i rosa genser"],
+      ["lilly-26.jpg", "Lilly i dress med bamsemønster"],
+      ["lilly-24.jpg", "Lilly med smokk og rosa klut i vogna"],
+      ["lilly-27.jpg", "Lilly på magen i sofaen og smiler"],
+      ["lilly-28.jpg", "Lilly og et annet barn ligger på magen i sofaen"],
+      ["lilly-29.jpg", "Lilly smiler i vogna"],
+      ["lilly-30.jpg", "Lilly smiler stort"],
+      ["lilly-01.jpg", "Lilly smiler i sofaen"],
+      ["lilly-02.jpg", "Lilly på lekematten med en rosa klut"],
+      ["lilly-03.jpg", "Lilly i rosa dress med bamser"],
+      ["lilly-04.jpg", "Lilly i gåstolen"],
+      ["lilly-05.jpg", "Lilly sitter i sofaen"],
+      ["lilly-06.jpg", "Lilly i vogna med en lilla bamse"],
+      ["lilly-07.jpg", "Lilly smiler i vogna"],
+      ["lilly-08.jpg", "Lilly i vogna med hvit lue"],
+      ["lilly-09.jpg", "Lilly i bæresele med solhatt"],
+      ["lilly-10.jpg", "Lilly i festdrakt i sofaen sammen med et annet barn"],
+      ["lilly-11.jpg", "Lilly leker på gulvet sammen med et annet barn"],
+      ["lilly-12.jpg", "Lilly sover i bilstolen"],
+      ["lilly-31.jpg", "Lilly spiser i rosa smekke med hjerter"],
+    ];
 
     // ── Skjema ─────────────────────────────────────────────
     // Svarene sendes via FormSubmit til denne e-postadressen.
@@ -212,21 +155,21 @@
     // Variert høyde gjør at plassholderne ligner et ekte bildegalleri.
     const hoyder = [4/3, 1, 3/4, 4/5, 1, 4/3];
     const gallery = document.getElementById("gallery");
-    for (let i = 1; i <= ANTALL_BILDER; i++) {
+    BILDER.forEach(([fil, alt], i) => {
       const fig = document.createElement("figure");
       fig.className = "photo";
       const img = new Image();
-      img.src = `bilder/${i}.jpg`;
-      img.alt = `Lilly, bilde ${i}`;
+      img.src = `bilder/${fil}`;
+      img.alt = alt;
       img.loading = "lazy";
       img.onerror = () => {
         fig.classList.add("placeholder");
         fig.style.aspectRatio = hoyder[i % hoyder.length];
-        fig.innerHTML = `<svg aria-hidden="true" viewBox="0 0 120 140"><use href="#bunny"/></svg><span>Bilde ${i}</span>`;
+        fig.innerHTML = `<svg aria-hidden="true" viewBox="0 0 120 140"><use href="#bunny"/></svg><span>Bilde ${i + 1}</span>`;
       };
       fig.appendChild(img);
       gallery.appendChild(fig);
-    }
+    });
 
     const form = document.getElementById("rsvp-form");
     const msg = document.getElementById("msg");
@@ -234,6 +177,15 @@
       e.preventDefault();
       msg.className = "msg";
       msg.textContent = "";
+
+      const navn = form.Navn.value.trim();
+      if (!navn) {
+        msg.className = "msg error";
+        msg.textContent = "Skriv navnet ditt.";
+        form.Navn.focus();
+        return;
+      }
+      form.Navn.value = navn;
 
       const btn = form.querySelector("button");
       btn.disabled = true;
@@ -246,14 +198,18 @@
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok || String(data.success) !== "true") throw new Error(data.message);
-        const navn = form.Navn.value.trim();
         const kommer = form.Svar.value === "Kommer";
-        form.parentElement.innerHTML = `
-          <svg class="peek" viewBox="0 0 120 140" aria-hidden="true"><use href="#bunny"/></svg>
-          <div class="thanks" role="status">
-            <strong>Takk, ${navn.replace(/[<>&"]/g, "")}!</strong>
-            ${kommer ? "Så gøy – vi gleder oss til å se deg! 🎂" : "Så synd, men takk for at du sa ifra."}
-          </div>`;
+        const tak = document.createElement("div");
+        tak.className = "thanks";
+        tak.setAttribute("role", "status");
+        const strong = document.createElement("strong");
+        strong.textContent = `Takk, ${navn}!`;
+        tak.append(strong, kommer
+          ? "Så gøy – vi gleder oss til å se deg søndag 25. oktober kl. 14.00! 🎂"
+          : "Så synd, men takk for at du sa ifra.");
+        form.replaceWith(tak);
+        document.querySelector(".rsvp .lead").remove();
+        document.getElementById("rsvp-title").textContent = "Svar sendt";
       } catch {
         msg.className = "msg error";
         msg.textContent = "Noe gikk galt. Prøv igjen om litt.";
