@@ -155,11 +155,13 @@
 
     /* Ønskeliste */
     .wishlist { list-style: none; margin: 28px auto 0; padding: 0; max-width: 640px; display: grid; gap: 12px; }
-    .wishlist li {
-      display: flex; align-items: center; gap: 16px; padding: 16px 18px;
-      background: var(--card); border: 2px solid var(--line); border-radius: 18px;
-      font-size: 18px; font-weight: 700;
-    }
+    .wishlist li { background: var(--card); border: 2px solid var(--line); border-radius: 18px; font-size: 18px; font-weight: 700; }
+    .wishlist .wish { display: flex; align-items: center; gap: 16px; padding: 16px 18px; color: inherit; text-decoration: none; border-radius: 16px; }
+    .wishlist a.wish:hover { background: var(--soft); }
+    .wishlist a.wish:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
+    .wishlist .wish-text { flex: 1; min-width: 0; }
+    .wishlist .go { flex: none; color: var(--accent-dark); font-size: 22px; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     .wishlist .ico { flex: none; width: 56px; height: 56px; display: grid; place-items: center; background: var(--soft); border-radius: 50%; }
     .wishlist .ico svg { width: 38px; height: 38px; display: block; }
     .page-end { text-align: center; margin: 32px 0 56px; }
